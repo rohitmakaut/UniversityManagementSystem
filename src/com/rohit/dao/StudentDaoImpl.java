@@ -5,22 +5,22 @@ import java.util.List;
 
 import com.rohit.model.Student;
 
-public class UniversityManagementDaoImpl implements UniversityManagementDao {
+public class StudentDaoImpl implements StudentDao {
 	
-	private UniversityManagementDaoImpl() {
+	private StudentDaoImpl() {
 		super();
 	}
 
-	private static UniversityManagementDao universityManagementDao=null;
+	private static StudentDao studentDao=null;
 	
-	public static UniversityManagementDao getInstance() {
-		if(universityManagementDao==null) {
-			universityManagementDao=new UniversityManagementDaoImpl();
+	public static StudentDao getInstance() {
+		if(studentDao==null) {
+			studentDao=new StudentDaoImpl();
 		}
-		return universityManagementDao;
+		return studentDao;
 	}
 	
-	List<Student> students=new ArrayList<Student>();
+	private List<Student> students=new ArrayList<Student>();
 	
 	@Override
 	public Integer addStudent(Student student) throws Exception {
